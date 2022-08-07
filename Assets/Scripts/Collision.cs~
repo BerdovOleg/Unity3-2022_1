@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Collision : MonoBehaviour
+{
+    [SerializeField] Rigidbody door;
+
+    [SerializeField] Rigidbody[] bang;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Enter Trigger");
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        print("Exit Trigger");
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        print("Stay Trigger");
+    }
+
+}
