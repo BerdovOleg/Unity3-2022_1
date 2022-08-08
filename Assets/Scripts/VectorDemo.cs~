@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class VectorDemo : MonoBehaviour
+{
+    [SerializeField] Transform Obj1;
+    [SerializeField] Transform Obj2;
+    public float a;
+
+    // Update is called once per frame
+    void Update()
+    {
+          a = Vector3.Distance(Obj1.position, Obj2.position);
+
+       
+    }
+
+    private void OnDrawGizmos()
+    {
+        var plus = Obj1.position + Obj2.position;
+        var minus = Obj1.position - Obj2.position;
+        var proiz = Obj1.position * a;
+
+        Gizmos.DrawLine(new Vector3(0, 0, 0), plus);
+    }
+}
