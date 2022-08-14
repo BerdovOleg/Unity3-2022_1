@@ -1,0 +1,40 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    [SerializeField] float BouseForce;
+    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] GameManager Game;
+
+    public Platform CurrentPlatform;
+
+    public void ReachFinish()
+    {
+        rigidbody.velocity = Vector3.zero;
+        Game.OnPlayerReachedFinish();
+    }
+
+    public void Bounce()
+    { rigidbody.velocity = new Vector3(0, BouseForce, 0); }
+
+    public void Die()
+    {
+        rigidbody.velocity = Vector3.zero;
+        Game.OnPlayerDie();
+    }
+
+    private void Update()
+    {
+        Vector3 startPos;
+        if (rigidbody.velocity != Vector3.zero)
+        {
+            startPos = transform.position;
+        }
+            float mySpeed = (startPos - transform.position) / Time.deltaTime;
+        
+        
+    }
+}

@@ -1,0 +1,38 @@
+﻿using UnityEngine;
+using System.Collections;
+using TMPro;
+using UnityEngine.UI;
+
+namespace UI
+{
+    public class StartScreen : Screen
+    {
+        [SerializeField] TextMeshProUGUI CurrentLevel;
+        [SerializeField] TextMeshProUGUI NextLevel;
+        [SerializeField] Image ProgresLevel;
+
+        [SerializeField] private GameObject LevelCounterObj;
+        
+        public override void HideScreen()
+        {
+            LevelCounterObj.SetActive(false);
+        }
+
+        public override void ShowScreen()
+        {
+            LevelCounterObj.SetActive(true);
+        }
+
+        public void SetProgress(float value)
+        {
+            if (value > 1) return;
+            ProgresLevel.fillAmount = value;
+        }
+
+        public void SetCurrentLevel(int numer)
+        {
+            CurrentLevel.text = numer.ToString();
+            NextLevel.text = (numer + 1).ToString();
+        }
+    }
+}

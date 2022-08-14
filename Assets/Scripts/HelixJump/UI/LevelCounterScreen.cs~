@@ -1,0 +1,19 @@
+﻿using UnityEngine;
+using System.Collections;
+using TMPro;
+namespace UI
+{
+    public class LevelCounterScreen : Screen
+    {
+
+        public override void HideScreen()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void ShowScreen()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+}

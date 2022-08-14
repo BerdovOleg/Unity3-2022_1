@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+namespace UI
+{
+
+    public class RestartScreen : Screen
+    {
+        [SerializeField] GameObject restartScreen;
+
+        public override void HideScreen()
+        {
+            restartScreen.SetActive(false);
+        }
+
+        public override void ShowScreen()
+        {
+            restartScreen.SetActive(true);
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+    }
+}

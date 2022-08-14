@@ -1,0 +1,36 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    [SerializeField] PlayerControl control;
+    [SerializeField] Player player;
+    [SerializeField] ScreenManager screenManager;
+    public enum State{
+    Playng,
+    Won,
+    Loss,
+    }
+
+    public State CurrentState { get; private set; }
+
+    public void OnPlayerDie()
+    {
+        if (CurrentState != State.Playng) return;
+
+        CurrentState = State.Loss;
+        control.enabled = false;
+        Debug.Log("Game Over!");
+    }
+
+    public void OnPlayerReachedFinish()
+    {
+        if (CurrentState != State.Playng) return;
+         
+        CurrentState = State.Won;
+        control.enabled = false;
+        Debug.Log("Finish!");
+    }
+}
