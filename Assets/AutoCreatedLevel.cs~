@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+public class AutoCreatedLevel : MonoBehaviour
+{
+    string path3 = @"Dara/LevelOne";
+
+// Start is called before the first frame update
+void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Path.HasExtension(path3))
+        {
+            Debug.Log($"{path3} has an extension.");
+        }
+    }
+}

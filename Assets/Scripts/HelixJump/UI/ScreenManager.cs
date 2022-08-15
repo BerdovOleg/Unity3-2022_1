@@ -55,20 +55,7 @@ namespace UI {
                     break;
                 }
             }
-        }
-
-        public void Restart()
-        {
-            foreach (var screen in Screens)
-            {
-                if (screen is RestartScreen)
-                {
-                    Destroy(_confiti);
-                    HideScreen(screen);
-                    break;
-                }
-            }
-        }
+        }   
 
         public void Win(int level)
         {

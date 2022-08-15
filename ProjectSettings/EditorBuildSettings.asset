@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Q6_HelixJump.unity
+    guid: 693ba7190c65e40eca0a5566a863ecdf
   m_configObjects: {}

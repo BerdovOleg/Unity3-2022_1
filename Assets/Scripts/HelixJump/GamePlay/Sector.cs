@@ -21,7 +21,12 @@ public class Sector : MonoBehaviour
     }
 
     public void Deactive()
-    { this.gameObject.SetActive(false); }
+    {gameObject.SetActive(false);}
+
+    public void PlatformSetGood(bool good)
+    { IsGood = good;
+        UpdateMaterial();
+    }
 
 
     private void OnCollisionEnter(UnityEngine.Collision collision)

@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] AutoCreatedLevel Factory;
     [SerializeField] PlayerControl control;
     [SerializeField] Player player;
+    [SerializeField] GameObject CoreLevel;
     [SerializeField] ScreenManager screenManager;
+    [SerializeField] SaveSystem saveSystem;
 
     [SerializeField] private AudioClip clip;
     [SerializeField] SoundManger soundManger;
@@ -21,11 +25,11 @@ public class GameManager : MonoBehaviour
     private Vector3 startPoint;
     float distance;
     float complited;
+    bool startGame = false;
 
 
-    Vector3 PlayerStartPos;
-    Vector3 CameraStartPos;
-    List<Platform> platforms;
+    Vector3 PlayerStartPos = new Vector3(0f, 2f, -4.5f);
+    Vector3 CameraStartPos= new Vector3(0f, 10f, -20f);
 
 
     public enum State{
@@ -49,6 +53,7 @@ public class GameManager : MonoBehaviour
         if (CurrentState != State.Playng) return;
 
         CurrentState = State.Loss;
+        saveSystem.SaveGame(Level, MaxBlock);
         control.enabled = false;
         screenManager.Loss((int)complited, MaxBlock);
     }
@@ -58,32 +63,47 @@ public class GameManager : MonoBehaviour
         if (CurrentState != State.Playng) return;
          
         CurrentState = State.Won;
+        saveSystem.SaveGame(Level + 1, MaxBlock);
         control.enabled = false;
         screenManager.Win(Level);
     }
-
     private void Start()
     {
-        Level = 1;
+        startGame = false;
+        Level = saveSystem.CurrentLevel;
         CurrentBlock = 0;
-        MaxBlock = 0;
+        MaxBlock = saveSystem.RecordBlock;
         complited = 0;
-        startPoint = GetComponentInChildren<StartPlatform>().StartPoint;
-        finishPoint = GetComponentInChildren<FinishPlatform>().FinishPoint;
+        StartLevel(Level);
+    }
 
+    private void StartLevel(int level)
+    {
+        player.transform.position = PlayerStartPos;
+        Camera.main.transform.position = CameraStartPos;
+        CurrentBlock = 0;
+        CoreLevel.transform.Rotate(new Vector3(0, 0, 0));
+        Level = level;
+        Factory.CollectingLevel(level);
         OnStartGame();
-        distance = Vector3.Distance(startPoint, finishPoint);
-
-        PlayerStartPos = player.transform.position;
-        CameraStartPos = Camera.main.transform.position;
-        platforms = new List<Platform>();
-        platforms.AddRange(GetComponentsInChildren<Platform>());
     }
 
     private void Update()
     {
         ProgressLevel();
         ProgressBlock();
+        if (!startGame)
+        {
+            startPoint = GetComponentInChildren<StartPlatform>().StartPoint;
+            finishPoint = GetComponentInChildren<FinishPlatform>().FinishPoint;
+            distance = Vector3.Distance(startPoint, finishPoint);
+            startGame = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            saveSystem.ResetData();
+        }
     }
 
     private void ProgressBlock()
@@ -110,16 +130,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        foreach (var platform in platforms)
-        {
-            platform.gameObject.SetActive(true);
-        }
-
-        player.transform.position = PlayerStartPos;
-        Camera.main.transform.position = CameraStartPos;
-        CurrentBlock = 0;
-        screenManager.Restart();
-        OnStartGame();
+        SceneManager.LoadScene(0);
     }
 
 }

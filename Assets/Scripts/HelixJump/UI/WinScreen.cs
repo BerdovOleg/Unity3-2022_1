@@ -29,10 +29,5 @@ namespace UI
         {
             levelComplited.text = "LEVEL " + level + " PASED";
         }
-
-        public void ClicToNextLevel()
-        {
-            Debug.Log("Next Level");
-        }
     }
 }

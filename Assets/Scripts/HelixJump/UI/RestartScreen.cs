@@ -30,10 +30,5 @@ namespace UI
             Progress.text = progress+"% COMPLITED";
             Record.text = "NEW RECORD: " + newRecord;
         }
-
-        public void ClicToRestart()
-        {
-            Debug.Log("Restart");
-        }
     }
 }
