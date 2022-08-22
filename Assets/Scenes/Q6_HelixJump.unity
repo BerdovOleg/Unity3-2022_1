@@ -695,6 +695,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 2838986802380395641, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 38489b44c53ba4d73a1670b0a2a3ae5d, type: 3}
+    - target: {fileID: 2838986802380395641, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
       propertyPath: CoreLevel
       value: 
       objectReference: {fileID: 642848377}
@@ -754,6 +758,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2838986803196338150, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 39f7fe0d029c641c0b8875aa45b31638, type: 3}
     - target: {fileID: 2838986803196338150, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
       propertyPath: soundManger
       value: 
