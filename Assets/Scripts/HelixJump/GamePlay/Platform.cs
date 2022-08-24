@@ -24,8 +24,12 @@ public class Platform : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
-            player.BlockComplited();
-            gameObject.SetActive(false);
+            if (transform.position.y > player.gameObject.transform.position.y)
+            {
+                Debug.Log("Player is Exit!");
+                player.BlockComplited();
+                gameObject.SetActive(false);
+            }
         }
     }
 }

@@ -690,6 +690,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 238605777240394511, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2838986802380395640, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -763,8 +767,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 39f7fe0d029c641c0b8875aa45b31638, type: 3}
     - target: {fileID: 2838986803196338150, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
+      propertyPath: BouseForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2838986803196338150, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
       propertyPath: soundManger
       value: 
       objectReference: {fileID: 789820716}
+    - target: {fileID: 2838986803879825219, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8930b98be9d74b188a72d2c9e97a824, type: 3}
