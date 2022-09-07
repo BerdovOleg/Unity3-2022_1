@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5275939944013800879
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Gradient
-  m_Shader: {fileID: -6465566751694194690, guid: cdc25d46216164213b63b47e84062c3a, type: 3}
+  m_Name: LiteEffects
+  m_Shader: {fileID: -6465566751694194690, guid: e59bf174e6b7f40dbb820a6d8c4f696e, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -34,24 +47,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Edge_1: 0.422
-    - _Edge_2: 0.875
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _ColorOne: {r: 1, g: 0, b: 0.6736355, a: 0}
-    - _ColorTwo: {r: 0, g: 0.4830761, b: 1, a: 0}
+    - _BaseCollor: {r: 0.05098039, g: 0.33333647, b: 1, a: 0}
+    - _LightCollor: {r: 2.670157, g: 1.108794, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4383963271618691375
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
