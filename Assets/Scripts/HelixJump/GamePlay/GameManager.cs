@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
     {
         ProgressLevel();
         ProgressBlock();
-        if (!startGame)
+        if (startPoint ==Vector3.zero & finishPoint == Vector3.zero)
         {
             startPoint = GetComponentInChildren<StartPlatform>().StartPoint;
             finishPoint = GetComponentInChildren<FinishPlatform>().FinishPoint;
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
 
     private void ProgressLevel()
     {
-        
+        if (player.CurrentPlatform == null) return;
         var currentPos = Math.Abs(Vector3.Distance(player.CurrentPlatform.transform.position, finishPoint) - distance);
         complited = (currentPos) / ((distance) / 100);
         var posotoin = complited / 100;

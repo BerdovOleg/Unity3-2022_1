@@ -60,8 +60,7 @@ public class SaveSystem : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath
               + "/MySaveData.dat");
-            CurrentLevel = 1;
-            RecordBlock = 0;
+            SaveGame(1, 0);
             Debug.Log("Data reset complete!");
         }
         else

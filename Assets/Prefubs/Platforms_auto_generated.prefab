@@ -59,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sectors: []
   Ready: 0
+  SectorDestriy: {fileID: 3268412666196775151, guid: 5f2545450be3446808d85876b616978c, type: 3}
 --- !u!65 &4697636029534121200
 BoxCollider:
   m_ObjectHideFlags: 0
